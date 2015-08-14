@@ -1,12 +1,12 @@
 # vim-cssfmt
 
-Format your CSS using [cssfmt](https://github.com/morishitter/cssfmt) inside Vim.
+Format your CSS using [CSSfmt](https://github.com/morishitter/cssfmt) inside Vim.
 
 This plugin is heavily inspired by [vim-esformatter](https://github.com/millermedeiros/esformatter).
 
 ## Installation
 
-First you need to install cssfmt (make sure you have [Node.js](https://nodejs.org/) 
+First you need to install CSSfmt (make sure you have [Node.js](https://nodejs.org/) 
 installed):
 
 ```
