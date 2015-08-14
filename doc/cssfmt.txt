@@ -1,0 +1,30 @@
+*cssfmt.txt* Automatically format your CSS files.
+
+===============================================================================
+USAGE                                                             *cssfmt*
+
+In normal mode:
+`:Cssfmt`: format the whole buffer.
+
+In Visual mode:
+`:'<,'>CssfmtVisual`: format the selected block.
+
+Or by mapping the commands in your `.vimrc`:
+```
+nnoremap <silent> <leader>cs :Cssfmt<CR>
+vnoremapap <silent> <leader>cs :CssfmtVisual<CR>
+```
+
+
+===============================================================================
+REPOSITORY
+
+https://github.com/kewah/vim-cssfmt
+
+
+===============================================================================
+LICENSE
+
+released under the wtfpl http://sam.zoy.org/wtfpl/COPYING
+
+
