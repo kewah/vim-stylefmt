@@ -2,7 +2,7 @@
 
 Format your CSS using [CSSfmt](https://github.com/morishitter/cssfmt) inside Vim.
 
-This plugin is heavily inspired by [vim-esformatter](https://github.com/millermedeiros/esformatter).
+This plugin is heavily inspired by [vim-esformatter](https://github.com/millermedeiros/vim-esformatter).
 
 ## Installation
 
