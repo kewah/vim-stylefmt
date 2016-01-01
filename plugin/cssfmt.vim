@@ -38,9 +38,9 @@ function! s:CssfmtNormal()
   else
     " delete whole buffer content and append the formatted code
     normal! ggdG
-    call append(0, split(output, "\n"))
-    " need to delete the last line since append() will add an extra line
-    execute ':$d'
+    let list = split(output, "\n")
+    call setline(1, list[0])
+    call append(1, list[1:])
   endif
 
   " Clean up: restore previous cursor position and working directory
