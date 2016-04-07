@@ -1,7 +1,7 @@
 " ============================================================================
-" File:        cssfmt.vim
+" File:        stylefmt.vim
 " Maintainer:  Antoine Lehurt
-" Description: Expose commands to execute the cssfmt binary on normal and
+" Description: Expose commands to execute the stylefmt binary on normal and
 "              visual modes.
 " Last Change: 2015-08-14
 " License:     This program is free software. It comes without any warranty,
@@ -13,27 +13,27 @@
 " ============================================================================
 
 " avoid installing twice
-if exists('g:loaded_cssfmt') || &compatible
+if exists('g:loaded_stylefmt') || &compatible
   finish
 endif
 
 " check if debugging is turned off
-if !exists('g:cssfmt_debug')
-  let g:loaded_cssfmt = 1
+if !exists('g:stylefmt_debug')
+  let g:loaded_stylefmt = 1
 end
 
-function! s:CssfmtNormal()
+function! s:StylefmtNormal()
   " store current cursor position and change the working directory
   let win_view = winsaveview()
   let file_wd = expand('%:p:h')
   let current_wd = getcwd()
   execute ':lcd' . file_wd
 
-  " pass whole buffer content to cssfmt
-  let output = system('cssfmt', join(getline(1,'$'), "\n"))
+  " pass whole buffer content to stylefmt
+  let output = system('stylefmt', join(getline(1,'$'), "\n"))
 
   if v:shell_error
-    echom "Error while executing cssfmt! no changes made."
+    echom "Error while executing stylefmt! no changes made."
     echo output
   else
     " delete whole buffer content and append the formatted code
@@ -48,7 +48,7 @@ function! s:CssfmtNormal()
   execute ':lcd' . current_wd
 endfunction
 
-function! s:CssfmtVisual() range
+function! s:StylefmtVisual() range
   " store current cursor position and change the working directory
   let win_view = winsaveview()
   let file_wd = expand('%:p:h')
@@ -59,10 +59,10 @@ function! s:CssfmtVisual() range
   let range_start = line("'<")
   let input = getline("'<", "'>")
 
-  let output = system('cssfmt', join(input, "\n"))
+  let output = system('stylefmt', join(input, "\n"))
 
   if v:shell_error
-    echom 'Error while executing cssfmt! no changes made.'
+    echom 'Error while executing stylefmt! no changes made.'
     echo output
   else
     " delete the old lines
@@ -84,5 +84,5 @@ function! s:CssfmtVisual() range
   execute ':lcd' . current_wd
 endfunction
 
-command! -range=0 -complete=shellcmd Cssfmt call s:CssfmtNormal()
-command! -range=% -complete=shellcmd CssfmtVisual call s:CssfmtVisual()
+command! -range=0 -complete=shellcmd Stylefmt call s:StylefmtNormal()
+command! -range=% -complete=shellcmd StylefmtVisual call s:StylefmtVisual()
