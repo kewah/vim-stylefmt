@@ -21,8 +21,8 @@ Then install the plugin:
 * Pathogen
   - `cd ~/.vim/bundle && git clone git://github.com/kewah/vim-stylefmt.git`
 * Vundle
-  - Add `Bundle 'kewah/vim-stylefmt'` to `.vimrc`
-  - Run `:BundleInstall`
+  - Add `Plugin 'kewah/vim-stylefmt'` to `.vimrc`
+  - Run `:PluginInstall`
 * NeoBundle
   - Add `NeoBundle 'kewah/vim-stylefmt'` to `.vimrc`
   - Run `:NeoBundleInstall`
